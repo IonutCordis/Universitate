@@ -1,0 +1,28 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+</head>
+<body>
+    <p>Introduceti textul:</p>
+    <input id="t" />
+    <input type="button" value="count" onclick="count(t.value)" />
+    <p>Numarul de vocale din textul introdus: <span id="p"></span></p>
+    <script>
+        count = function (a) {
+            //var a=document.getElementById("t");
+            n = a.length;
+            var c = 0;
+            for (i = 0; i < n; i++) {
+                if ((a[i] == "a") || (a[i] == "e") || (a[i] == "i") || (a[i] == "o") || (a[i] == "u")) {
+                    c += 1;
+                }
+            }
+
+            document.getElementById("p").innerText = c;
+        }
+    </script>
+</body>
+</html>

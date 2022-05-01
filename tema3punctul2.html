@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <style>
+        #rezultat_corect, #rezultat_incorect {
+            display: none;
+        }
+        #rezultat_corect {
+            color: green;
+        }
+        #rezultat_incorect {
+            color:red;
+        }
+    </style>
+</head>
+<body>
+    <p>X = <span id="primul_numar">10</span></p>
+    <p>Y = <span id="aldoilea_numar">30</span></p>
+    <p>Z = <span id="rezultat"> 300</span></p>
+    <input type="text" id="operator" value="$" onchange="selectatiOperatorulMatematicCorect()" />
+    <p id="rezultat_corect">Operatorul aritmetic introdus este cel corect</p>
+    <p id="rezultat_incorect">Operatorul aritmetic introdus este incorect</p>
+    <script>
+        function selectatiOperatorulMatematicCorect() {
+            const operator = document.getElementById("operator").value;
+            const x = document.getElementById("primul_numar").innerHTML;
+            const y = document.getElementById("aldoilea_numar").innerHTML;
+            const z = document.getElementById("rezultat").innerHTML;
+            console.log(typeof operator);
+            if (operator == '*') {
+            document.getElementById("rezultat_corect").style.display = "block";
+                document.getElementById("rezultat_incorect").style.display = "none";
+            } else {
+                document.getElementById("rezultat_incorect").style.display = "block";
+                document.getElementById("rezultat_corect").style.display = "none";
+            }
+            console.log(x);
+            console.log(y);
+            console.log(z);
+            console.log(operator);
+        }
+    </script>
+</body>
+</html>
